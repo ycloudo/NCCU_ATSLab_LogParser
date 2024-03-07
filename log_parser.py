@@ -6,7 +6,8 @@ class LogParser:
     '''
     @param fpath The path of cowrie.json
     '''
-    # def __init__(self):
+    def __init__(self,outdir):
+        self.output_dir =outdir
         
     def Json2Log(self,fpath):
         # parse every log by session id
@@ -41,6 +42,6 @@ class LogParser:
             self.result.append(tmp_obj)
 
     def output(self):
-        os.makedirs("./output", exist_ok=True)
-        with open(f'./output/{self.fname}.json', 'w') as json_file:
+        os.makedirs(self.output_dir, exist_ok=True)
+        with open(f'{self.output_dir}/{self.fname}.json', 'w') as json_file:
             json.dump(self.result, json_file, indent=4)
