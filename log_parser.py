@@ -6,7 +6,9 @@ class LogParser:
     '''
     @param fpath The path of cowrie.json
     '''
-    def __init__(self,fpath):
+    # def __init__(self):
+        
+    def Json2Log(self,fpath):
         # parse every log by session id
         logs = []
         self.fname = fpath.split('/')[-2]
